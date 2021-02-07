@@ -32,7 +32,7 @@ public abstract class HiLogConfig {
     }
 
     public boolean includeThread() {
-        return false;
+        return true;
     }
     public int stackTraceDepth() {
         return 5;

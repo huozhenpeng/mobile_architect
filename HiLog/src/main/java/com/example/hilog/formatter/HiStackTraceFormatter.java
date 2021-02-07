@@ -27,6 +27,6 @@ public class HiStackTraceFormatter implements HiLogFormatter<StackTraceElement[]
                 }
             }
         }
-        return null;
+        return stringBuilder.toString();
     }
 }

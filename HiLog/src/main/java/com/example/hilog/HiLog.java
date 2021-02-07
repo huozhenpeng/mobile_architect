@@ -1,12 +1,11 @@
 package com.example.hilog;
 
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 
 import com.example.hilog.printer.HiLogPrinter;
+import com.example.hilog.utils.HiStaceTraceUtils;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -14,6 +13,12 @@ import java.util.List;
  * Author: huozhenpeng
  */
 public class HiLog {
+    private static final String HI_LOG_PACKAGE;
+    static {
+        String className = HiLog.class.getName();
+        HI_LOG_PACKAGE = className.substring(0, className.lastIndexOf('.') + 1);
+//        HI_LOG_PACKAGE = "";
+    }
     public static void v(Object... contents) {
         log(HiLogType.V, contents);
     }
@@ -36,7 +41,7 @@ public class HiLog {
             stringBuilder.append(threadInfo).append("\n");
         }
         if (config.stackTraceDepth() > 0) {
-            String stackTrace = HiLogConfig.STACK_TRACE_FORMATTER.format(new Throwable().getStackTrace());
+            String stackTrace = HiLogConfig.STACK_TRACE_FORMATTER.format(HiStaceTraceUtils.getCroppedRealStackTrack(new Throwable().getStackTrace(), HI_LOG_PACKAGE, config.stackTraceDepth()));
             stringBuilder.append(stackTrace).append("\n");
         }
         String body = parseBody(contents, config);

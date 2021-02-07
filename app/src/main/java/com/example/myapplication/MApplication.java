@@ -5,6 +5,7 @@ import android.app.Application;
 import com.example.hilog.HiLog;
 import com.example.hilog.HiLogConfig;
 import com.example.hilog.HiLogManager;
+import com.example.hilog.printer.HiConsolePrinter;
 import com.google.gson.Gson;
 
 /**
@@ -35,6 +36,6 @@ public class MApplication extends Application {
                     }
                 };
             }
-        });
+        }, new HiConsolePrinter());
     }
 }
