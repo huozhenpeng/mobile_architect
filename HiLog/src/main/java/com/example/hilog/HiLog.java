@@ -22,8 +22,32 @@ public class HiLog {
     public static void v(Object... contents) {
         log(HiLogType.V, contents);
     }
+    public static void e(Object... contents) {
+        log(HiLogType.E, contents);
+    }
+    public static void a(Object... contents) {
+        log(HiLogType.A, contents);
+    }
+    public static void d(Object... contents) {
+        log(HiLogType.D, contents);
+    }
+    public static void i(Object... contents) {
+        log(HiLogType.I, contents);
+    }
     public static void vt(String tag, Object... contents) {
         log(HiLogType.V, tag, contents);
+    }
+    public static void dt(String tag, Object... contents) {
+        log(HiLogType.D, tag, contents);
+    }
+    public static void et(String tag, Object... contents) {
+        log(HiLogType.E, tag, contents);
+    }
+    public static void at(String tag, Object... contents) {
+        log(HiLogType.A, tag, contents);
+    }
+    public static void it(String tag, Object... contents) {
+        log(HiLogType.I, tag, contents);
     }
     private static void log(@HiLogType.TYPE int type, Object... contents) {
         log(HiLogManager.getInstance().getConfig(), type, HiLogManager.getInstance().getConfig().getGlobalTag(), contents);
