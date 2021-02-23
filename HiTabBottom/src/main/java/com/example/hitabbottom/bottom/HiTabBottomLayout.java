@@ -22,6 +22,7 @@ import com.example.hitabbottom.R;
 import com.example.hitabbottom.common.IHiTabLayout;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -82,12 +83,12 @@ public class HiTabBottomLayout extends FrameLayout implements IHiTabLayout<HiTab
 
     @Override
     public void addTabSelectedChangeListener(OnTabSelectedListener<HiTabBottomInfo<?>> listener) {
-
+        tabSelectedChangeListeners.add(listener);
     }
 
     @Override
     public void defaultSelected(@NonNull HiTabBottomInfo<?> defaultInfo) {
-
+        onSelected(defaultInfo);
     }
 
     @Override
@@ -104,7 +105,14 @@ public class HiTabBottomLayout extends FrameLayout implements IHiTabLayout<HiTab
         //添加底部导航栏背景色
         addBackGround();
 
-        //清除listener
+        //这儿要保留外面设置的listener
+        Iterator<OnTabSelectedListener<HiTabBottomInfo<?>>> iterator = tabSelectedChangeListeners.iterator();
+        while (iterator.hasNext()) {
+            if (iterator.next() instanceof HiTabBottom) {
+                iterator.remove();
+            }
+        }
+
         tabSelectedChangeListeners.clear();
 
         //每个tab高度、宽度
