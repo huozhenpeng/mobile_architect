@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -22,5 +23,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void log(View view) {
         HiLog.e("日志", "name");
+    }
+
+    public void tab(View view) {
+        Intent intent = new Intent(this, TabActivity.class);
+        startActivity(intent);
     }
 }

@@ -1,3 +1,5 @@
+include ':HiCommon'
+include ':HiTabBottom'
 include ':HiLog'
 include ':app'
 rootProject.name = "My Application"

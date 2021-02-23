@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.hilog.HiUtils;
+import com.example.hicommon.utils.HiUtils;
 
 /**
  * Date: 2021/2/7
