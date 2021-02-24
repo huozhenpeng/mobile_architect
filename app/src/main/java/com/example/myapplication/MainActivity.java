@@ -9,6 +9,8 @@ import android.view.View;
 import com.example.hilog.HiLog;
 import com.example.hilog.HiLogManager;
 import com.example.hilog.printer.HiViewPrinter;
+import com.example.myapplication.demo.BottomTabActivity;
+import com.example.myapplication.demo.TopTabActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,7 +28,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tab(View view) {
-        Intent intent = new Intent(this, TabActivity.class);
+        Intent intent = new Intent(this, BottomTabActivity.class);
         startActivity(intent);
     }
+
+    public void top_tab(View view) {
+        Intent intent = new Intent(this, TopTabActivity.class);
+        startActivity(intent);
+    }
+
 }

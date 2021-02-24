@@ -20,5 +20,11 @@
         android:text="tab"
         android:onClick="tab"
         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="top_tab"
+        android:onClick="top_tab"
+        />
 
 </LinearLayout>

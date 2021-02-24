@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.demo;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -13,6 +13,7 @@ import com.example.hitabbottom.bottom.HiTabBottom;
 import com.example.hitabbottom.bottom.HiTabBottomInfo;
 import com.example.hitabbottom.bottom.HiTabBottomLayout;
 import com.example.hitabbottom.common.IHiTabLayout;
+import com.example.myapplication.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,7 @@ import java.util.List;
  * Date: 2021/2/23
  * Author: huozhenpeng
  */
-public class TabActivity extends AppCompatActivity {
+public class BottomTabActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,7 +92,7 @@ public class TabActivity extends AppCompatActivity {
         hiTabBottomLayout.addTabSelectedChangeListener(new IHiTabLayout.OnTabSelectedListener<HiTabBottomInfo<?>>() {
             @Override
             public void onTabSelectedChange(int index, @NonNull HiTabBottomInfo<?> prevInfo, @NonNull HiTabBottomInfo<?> nextInfo) {
-                Toast.makeText(TabActivity.this, nextInfo.name, Toast.LENGTH_SHORT).show();
+                Toast.makeText(BottomTabActivity.this, nextInfo.name, Toast.LENGTH_SHORT).show();
             }
         });
         hiTabBottomLayout.defaultSelected(homeInfo);
