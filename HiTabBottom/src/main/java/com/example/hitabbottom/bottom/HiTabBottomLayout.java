@@ -203,4 +203,8 @@ public class HiTabBottomLayout extends FrameLayout implements IHiTabLayout<HiTab
         addView(view, params);
         view.setAlpha(bottomAlpha);
     }
+
+    public void setTabAlpha(float v) {
+        bottomAlpha = v;
+    }
 }

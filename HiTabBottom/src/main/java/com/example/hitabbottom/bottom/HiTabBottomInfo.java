@@ -4,17 +4,18 @@ import android.graphics.Bitmap;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.hicommon.common.domain.TabBean;
+
 /**
  * Date: 2021/2/22
  * Author: huozhenpeng
  * 单个tab所需的数据实体对象
  */
-public class HiTabBottomInfo<Color> {
+public class HiTabBottomInfo<Color> extends TabBean {
     public enum TabType {
         BITMAP, ICON
     }
 
-    public Class<? extends Fragment> fragment;
     public String name;
     public Bitmap defaultBitmap;
     public Bitmap selectedBitmap;
